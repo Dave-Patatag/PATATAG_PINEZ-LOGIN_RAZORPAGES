@@ -10,45 +10,56 @@ using PATATAG_PINEZ_LOGIN.Data;
 
 namespace PATATAG_PINEZ_LOGIN.Migrations
 {
-    [DbContext(typeof(DELACERNA_LOMERA_LAB_ACT_3_PROEL4W1Context))]
+    // This migration is linked to the DbContext.
+    [DbContext(typeof(PATATAG_PINEZ_LOGINContext))]
     [Migration("20260208115057_InitialCreate")]
     partial class InitialCreate
-    {
-        /// <inheritdoc />
+    {      
+        /// EF Core uses this to create/update the database schema.
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
+         
             modelBuilder
                 .HasAnnotation("ProductVersion", "8.0.23")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
+            // Enables auto-incrementing identity columns
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            // Defines the User table structure
             modelBuilder.Entity("PATATAG_PINEZ_LOGIN.Models.User", b =>
             {
+                // Primary key (auto-incrementing)
                 b.Property<int>("Id")
                     .ValueGeneratedOnAdd()
                     .HasColumnType("int");
 
                 SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                // Required Email column
                 b.Property<string>("Email")
                     .IsRequired()
                     .HasColumnType("nvarchar(max)");
 
+                // Required FullName column (max 100 characters)
                 b.Property<string>("FullName")
                     .IsRequired()
                     .HasMaxLength(100)
                     .HasColumnType("nvarchar(100)");
 
+                // Required hashed password storage
                 b.Property<string>("PasswordHash")
                     .IsRequired()
                     .HasColumnType("nvarchar(max)");
 
+                // Sets Id as primary key
                 b.HasKey("Id");
 
+                // Maps this entity to the "User" table
                 b.ToTable("User");
             });
+
 #pragma warning restore 612, 618
         }
     }

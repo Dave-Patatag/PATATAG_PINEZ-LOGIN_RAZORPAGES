@@ -7,11 +7,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-builder.Services.AddDbContext<DELACERNA_LOMERA_LAB_ACT_3_PROEL4W1Context>(options =>
+builder.Services.AddDbContext<PATATAG_PINEZ_LOGINContext>(options =>
     options.UseSqlServer(
-        builder.Configuration.GetConnectionString("DELACERNA_LOMERA_LAB_ACT_3_PROEL4W1Context")
+        builder.Configuration.GetConnectionString("PATATAG_PINEZ-LOGINContext")
         ?? throw new InvalidOperationException(
-            "Connection string 'DELACERNA_LOMERA_LAB_ACT_3_PROEL4W1Context' not found."
+            "Connection string 'PATATAG_PINEZ-LOGINContext' not found."
         )
     )
 );

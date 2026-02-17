@@ -9,8 +9,8 @@ using PATATAG_PINEZ_LOGIN.Data;
 
 namespace PATATAG_PINEZ_LOGIN.Migrations
 {
-    [DbContext(typeof(DELACERNA_LOMERA_LAB_ACT_3_PROEL4W1Context))]
-    partial class DELACERNA_LOMERA_LAB_ACT_3_PROEL4W1ContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(PATATAG_PINEZ_LOGINContext))]
+    partial class PATATAG_PINEZ_LOGINContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {

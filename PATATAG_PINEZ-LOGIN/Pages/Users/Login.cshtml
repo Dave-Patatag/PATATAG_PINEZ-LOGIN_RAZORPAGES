@@ -6,7 +6,7 @@
     Layout = null;
 }
 
-<link rel="stylesheet" href="~/css/login.css" />
+<link rel="stylesheet" href="~/css/loginregister.css"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <div class="wrapper">
@@ -14,17 +14,17 @@
         <h2>Login</h2>
 
         <div asp-validation-summary="ModelOnly" class="validation-summary"></div>
-
-        <!-- EMAIL -->
+           
+        <!-- Email -->
         <div class="input-field">
-            <input asp-for="Input.Email" type="email" placeholder=" " />
+            <input asp-for="Input.Email" type="email" placeholder="Email" />
             <label asp-for="Input.Email"></label>
             <span asp-validation-for="Input.Email" class="error-text"></span>
         </div>
 
-        <!-- PASSWORD -->
+        <!-- Password -->
         <div class="input-field password-wrapper">
-            <input asp-for="Input.Password" type="password" placeholder=" " />
+            <input asp-for="Input.Password" type="password" placeholder="Password" />
             <label asp-for="Input.Password"></label>
             <i class="fa-solid fa-eye toggle-password"></i>
             <span asp-validation-for="Input.Password" class="error-text"></span>
@@ -32,6 +32,7 @@
 
         <button type="submit">Login</button>
 
+        <!-- Register Form -->
         <div class="register">
             Don’t have an account? <a asp-page="/Users/Register">Register</a>
         </div>
