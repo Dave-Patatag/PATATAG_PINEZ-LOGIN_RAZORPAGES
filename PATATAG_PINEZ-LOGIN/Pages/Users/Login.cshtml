@@ -1,0 +1,41 @@
+﻿@page
+@model PATATAG_PINEZ_LOGIN.Pages.Users.LoginModel
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = null;
+}
+
+<link rel="stylesheet" href="~/css/login.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<div class="wrapper">
+    <form method="post" novalidate>
+        <h2>Login</h2>
+
+        <div asp-validation-summary="ModelOnly" class="validation-summary"></div>
+
+        <!-- EMAIL -->
+        <div class="input-field">
+            <input asp-for="Input.Email" type="email" placeholder=" " />
+            <label asp-for="Input.Email"></label>
+            <span asp-validation-for="Input.Email" class="error-text"></span>
+        </div>
+
+        <!-- PASSWORD -->
+        <div class="input-field password-wrapper">
+            <input asp-for="Input.Password" type="password" placeholder=" " />
+            <label asp-for="Input.Password"></label>
+            <i class="fa-solid fa-eye toggle-password"></i>
+            <span asp-validation-for="Input.Password" class="error-text"></span>
+        </div>
+
+        <button type="submit">Login</button>
+
+        <div class="register">
+            Don’t have an account? <a asp-page="/Users/Register">Register</a>
+        </div>
+    </form>
+</div>
+
+<script src="~/js/site.js"></script>

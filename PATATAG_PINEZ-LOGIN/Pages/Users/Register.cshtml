@@ -1,0 +1,62 @@
+﻿@page
+@model PATATAG_PINEZ_LOGIN.Pages.Users.RegisterModel
+
+@{
+    ViewData["Title"] = "Register"; 
+    Layout = null;
+}
+
+<link rel="stylesheet" href="~/css/login.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<div class="wrapper">
+    <form method="post" novalidate>
+        <h2>Create Account</h2>
+
+        <div asp-validation-summary="ModelOnly" class="validation-summary"></div>
+
+        <div class="input-field">
+            <input asp-for="Input.FullName" placeholder=" " />
+            <label asp-for="Input.FullName"></label>
+            <span asp-validation-for="Input.FullName" class="error-text"></span>
+        </div>
+
+        <div class="input-field">
+            <input asp-for="Input.Email" type="email" placeholder=" " />
+            <label asp-for="Input.Email"></label>
+            <span asp-validation-for="Input.Email" class="error-text"></span>
+        </div>
+
+        <!-- Password -->
+        <div class="input-field password-wrapper">
+            <input asp-for="Input.Password" type="password" placeholder=" " />
+            <label asp-for="Input.Password"></label>
+            <i class="fa-solid fa-eye toggle-password"></i>
+            <span asp-validation-for="Input.Password" class="error-text"></span>
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="input-field password-wrapper">
+            <input asp-for="Input.ConfirmPassword" type="password" placeholder=" " />
+            <label asp-for="Input.ConfirmPassword"></label>
+            <i class="fa-solid fa-eye toggle-password"></i>
+            <span asp-validation-for="Input.ConfirmPassword" class="error-text"></span>
+        </div>
+
+        <div class="terms-group">
+            <div class="terms-container">
+                <input asp-for="Input.AgreeToTerms" />
+                <label asp-for="Input.AgreeToTerms"></label>
+            </div>
+            <span asp-validation-for="Input.AgreeToTerms" class="terms-error"></span>
+        </div>
+
+        <button type="submit">Register</button>
+
+        <div class="register">
+            Already have an account? <a asp-page="/Users/Login">Login</a>
+        </div>
+    </form>
+</div>
+
+<script src="~/js/site.js"></script>

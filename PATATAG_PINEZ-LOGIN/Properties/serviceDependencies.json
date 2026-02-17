@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:ARRANGUEZ_SORDILLA_LAB_ACTIVITY_3_PROEL4WContext"
+    }
+  }
+}
